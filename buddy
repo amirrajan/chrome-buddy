@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+
+if ! gem list | grep -q "eventmachine"
+then
+    gem install eventmachine
+fi
+
+if ! gem list | grep -q "faye-websocket"
+then
+    gem install faye-websocket
+fi
+
+if ! gem list | grep -q "open3"
+then
+    gem install open3
+fi
+
+irb -r ./buddy-repl.rb
